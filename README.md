@@ -39,20 +39,33 @@ pip install opencv-python mediapipe numpy scikit-learn matplotlib
 
 ## Scripts
 
-### 1. `collect_imgs.py`
+### 1. Collecting Images `collect_imgs.py`
 This script is responsible for collecting images of hand gestures. It captures images from the webcam and saves them in a specified directory.
 
 #### Key Features:
-- Creates a directory to store images if it does not exist.
-- Captures images for a specified number of classes and saves them in separate folders.
+- The script uses a webcam to capture hand gesture images.
+- Images are stored in the `/data` directory, organized by class labels (e.g., `0`, `1`, `2`).
 - Displays a message on the webcam feed to indicate when to capture images.
+
+#### Key Code:
+- Webcam feed is captured using OpenCV:
+```bash
+cap = cv2.VideoCapture(0)
+```
+- Images are saved in respective folders:
+```bash
+cv2.imwrite(os.path.join(DATA_DIR, str(j), '{}.jpg'.format(counter)), frame)
+```
+
+#### Outcome:
+- A dataset of images for different gesture classes is created in `/data`
 
 #### Usage:
 Run the script in a terminal:
 ```bash
 python collect_imgs.py
 ```
-Press 'Q' to start capturing images for each class.
+Press `Q` to start capturing images for each class.
 
 ### 2. `create_dataset.py`
 This script processes the collected images to extract hand landmarks using the MediaPipe library and prepares the dataset for training.
