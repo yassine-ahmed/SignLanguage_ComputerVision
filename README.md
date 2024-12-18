@@ -20,6 +20,22 @@ This project aims to develop a computer vision system that can recognize sign la
     └── /2                  # Images for class 2
 ```
 
+## Prerequisites
+Before running the project, ensure the following:
+
+1. Python 3.7 or above is installed.
+2. Required libraries are installed:
+   - OpenCV
+   - MediaPipe
+   - NumPy
+   - scikit-learn
+   - Matplotlib (optional, for visualization)
+   
+You can install these with:
+```bash
+pip install opencv-python mediapipe numpy scikit-learn matplotlib
+```
+3. A working webcam or external camera for capturing gestures.
 
 ## Scripts
 
@@ -83,16 +99,3 @@ python inference_classifier.py
 ```
 ## Data Directory
 The `/data` directory contains subdirectories for each class (0, 1, 2) with images collected during the data collection phase. Each image is saved in JPEG format.
-
-## Dependencies
-To run this project, you need to install the following Python packages:
-- OpenCV
-- MediaPipe
-- NumPy
-- scikit-learn
-- Matplotlib (optional, for visualization)
-
-You can install the required packages using pip:
-```bash
-pip install opencv-python mediapipe numpy scikit-learn matplotlib
-```
