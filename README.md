@@ -37,3 +37,62 @@ Run the script in a terminal:
 python collect_imgs.py
 ```
 Press 'Q' to start capturing images for each class.
+
+### 2. `create_dataset.py`
+This script processes the collected images to extract hand landmarks using the MediaPipe library and prepares the dataset for training.
+
+#### Key Features:
+- Reads images from the collected data directory.
+- Uses MediaPipe to detect hand landmarks and normalize their coordinates.
+- DSaves the processed data and corresponding labels into a pickle file.
+
+#### Usage:
+Run the script in a terminal:
+```bash
+python create_dataset.py
+```
+### 3. `train_classifier.py`
+This script trains a Random Forest classifier using the dataset created in the previous step.
+
+
+#### Key Features:
+- Loads the dataset from the pickle file.
+- Splits the data into training and testing sets.
+- Trains a Random Forest model and evaluates its accuracy.
+- Saves the trained model to a file.
+
+#### Usage:
+Run the script in a terminal:
+```bash
+python train_classifier.py
+```
+### 4. `inference_classifier.py`
+This script performs real-time gesture recognition using the trained model.
+
+
+#### Key Features:
+- Captures video from the webcam.
+- Processes each frame to detect hand landmarks.
+- Uses the trained model to predict the gesture being made.
+- Displays the predicted gesture on the webcam feed.
+
+#### Usage:
+Run the script in a terminal:
+```bash
+python inference_classifier.py
+```
+## Data Directory
+The `/data` directory contains subdirectories for each class (0, 1, 2) with images collected during the data collection phase. Each image is saved in JPEG format.
+
+## Dependencies
+To run this project, you need to install the following Python packages:
+- OpenCV
+- MediaPipe
+- NumPy
+- scikit-learn
+- Matplotlib (optional, for visualization)
+
+You can install the required packages using pip:
+```bash
+pip install opencv-python mediapipe numpy scikit-learn matplotlib
+```
