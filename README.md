@@ -19,3 +19,21 @@ This project aims to develop a computer vision system that can recognize sign la
     ├── /1                  # Images for class 1
     └── /2                  # Images for class 2
 ```
+
+
+## Scripts
+
+### 1. `collect_imgs.py`
+This script is responsible for collecting images of hand gestures. It captures images from the webcam and saves them in a specified directory.
+
+#### Key Features:
+- Creates a directory to store images if it does not exist.
+- Captures images for a specified number of classes and saves them in separate folders.
+- Displays a message on the webcam feed to indicate when to capture images.
+
+#### Usage:
+Run the script in a terminal:
+```bash
+python collect_imgs.py
+```
+Press 'Q' to start capturing images for each class.
