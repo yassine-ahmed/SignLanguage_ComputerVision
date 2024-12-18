@@ -4,6 +4,8 @@
 This project aims to develop a computer vision system that can recognize sign language gestures using a webcam. The system captures images of hand gestures, processes them to extract hand landmarks, and then classifies these gestures using a machine learning model.
 
 ## Project Structure
+
+```
 /SignLanguage_ComputerVision_Project
 │
 ├── collect_imgs.py          # Script to collect images for training
@@ -16,3 +18,4 @@ This project aims to develop a computer vision system that can recognize sign la
     ├── /0                  # Images for class 0
     ├── /1                  # Images for class 1
     └── /2                  # Images for class 2
+```
